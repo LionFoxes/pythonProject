@@ -25,6 +25,7 @@ def obtener_elementos(lis):
 
 # print(obtener_elementos([[2, 1, 8, 4], [1, 5, 3], [2, 6, 7], [8, 9]]))
 
+
 # punto 2
 
 
