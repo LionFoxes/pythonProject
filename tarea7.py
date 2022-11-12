@@ -128,7 +128,7 @@ print(estudiantes_con_profesor(cursos, profCursos, "Maestro Roshi"))
 
 # punto 5
 
-"""
+
 def problem_13037(i, b1, b2, b3):
     print(f"Case #{i + 1}:")
     print(len(b1 - b2 - b3), len(b2.intersection(b3) - b1))
@@ -155,4 +155,3 @@ def grab_input():
                     b3.add(int(chocolate))
             flag += 1
         problem_13037(i, b1, b2, b3)
-"""
