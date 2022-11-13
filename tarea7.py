@@ -24,25 +24,27 @@ def obtener_elementos(lis):
     return ans
 
 
-# print(obtener_elementos([[2, 1, 8, 4], [1, 5, 3], [2, 6, 7], [8, 9]]))
+# punto 2
 
 
 # punto 2
 
-
 def es_panagrama(cad):
-
-    solo_letras = set()  # Define un set vacío para guardar solo letras
-    for l in cad:
-        # cada letra se representa con un número lo que es el ordinal de las letras, cada una tiene un número
-        # y como está de forma creciente se puede comparar cunts cuantos caracteres hay y colocamos de la "a" a
-        # la "z" y le agregamos la "ñ", ya que esta se encuentra en otro lugar
-        if ord("a") <= ord(l) <= ord("z") or l == "ñ":  #
-            solo_letras.add(l)  # Arma un set que contiene las letras -- elimina cualquier otro símbolo
-    return 27 == len(solo_letras)  # Compara las longitudes, si ambas son iguales es que está contenido
+    cadena = set(cad.lower())
+    c = set()
+    ans = False
+    for letras in cadena:
+        if ord("a") <= ord(letras) <= ord("z") or letras == "ñ":
+            c.add(letras)
+            if 27 == len(c):
+                ans = True
+            else:
+                ans = False
+    return ans
 
 
 # Punto 3
+"""
 cursos = {"Introducción a la Programación": [["Pepito Perez", "892324", 4.0],
                                              ["Rivaldo Rodriguez", "434335", 4.3],
                                              ["Novita Caicedo", "442565", 3.4],
@@ -54,6 +56,8 @@ cursos = {"Introducción a la Programación": [["Pepito Perez", "892324", 4.0],
           "Humanidades": [["Eric Cartman", "343422", 2.0],
                           ["Stan Marsh", "22999", 3.3],
                           ["Novita Caicedo", "442565", 3.4]]}
+
+"""
 
 """ a """
 
@@ -87,23 +91,21 @@ def estudiantes_en_comun(cursos, materia1, materia2):
 
 
 # punto 4
+"""
 profCursos = {"Maestro Roshi": ["Introducción a la Programación", "Matemáticas"],
               "Maestro Kaiosama": ["Introducción a la Programación", "Estructuras de Datos", "Árboles y Grafos"],
               "Bills": ["Física Cuántica", "Análisis y Diseño de Algoritmos", "Diseño e Implementación de Algoritmos"]}
-
+"""
 """ a """
 
 
-def profesores_para_curso(diccionario_profesor_curso, materia):
+def profesores_para_curso(dic_profesor_curso, materia_buscada):
     ans = []
-    curso = diccionario_profesor_curso.values()
-    profesores = diccionario_profesor_curso.keys()
-    for materias in curso:
-        for profe in profesores:
-            for mater in materias:
-                if materia == mater and profe not in ans:
-                    ans.append(profe)
-
+    for profe in dic_profesor_curso:
+        materias = dic_profesor_curso[profe]
+        for materia in materias:
+            if materia_buscada == materia:
+                ans.append(profe)
     return ans
 
 
@@ -112,20 +114,17 @@ def profesores_para_curso(diccionario_profesor_curso, materia):
 """ b """
 
 
-def estudiantes_con_profesor(cursos, diccionario_profesor_curso, profesor):
-    ans = []
-    materia = cursos.keys()
-    for i in cursos.values():
-        for j in i:
-            estudiantes = j[0]
-            for y in diccionario_profesor_curso[profesor]:
-                for mate in materia[y]:
-                    if y == mate and estudiantes not in ans:
-                        ans.append(estudiantes)
-    return ans
+def estudiantes_con_profesor(cursos, prof_cursos, profesor):
+    ans = set()
+    materias = prof_cursos[profesor]
+    for materia in materias:
+        estudiantes = cursos[materia]
+        for estudiante in estudiantes:
+            ans.add(estudiante[0])
+    return list(ans)
 
 
-print(estudiantes_con_profesor(cursos, profCursos, "Maestro Roshi"))
+# print(estudiantes_con_profesor(cursos, profCursos, "Maestro Roshi"))
 
 
 # punto 5
