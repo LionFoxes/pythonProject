@@ -8,7 +8,11 @@ Fecha: 13 / 11 / 2022
 
 # Punto 1
 
-
+"""
+Función: obtener_elementos
+Input: Una lista de lista compuesta por números
+Output: Una lista que representa los números que están repetidos
+"""
 def obtener_elementos(lis):
     ans = None
     a = set()
@@ -23,11 +27,13 @@ def obtener_elementos(lis):
     ans = list(b)
     return ans
 
-
 # punto 2
+"""
+Función: es_panagrama
+Input: Una cadena
+Output: Verdadero o Falso si la cadena contiene todas las letras del alfabeto español
+"""
 
-
-# punto 2
 
 def es_panagrama(cad):
     cadena = set(cad.lower())
@@ -60,6 +66,11 @@ cursos = {"Introducción a la Programación": [["Pepito Perez", "892324", 4.0],
 """
 
 """ a """
+"""
+Función: obtener_estudiantes
+Input: Una diccionario donde se encuentran los estudiantes, a que curso van, su número de identificación y su nota
+Output: Todos los estudiantes que están dentro de un curso
+"""
 
 
 def obtener_estudiantes(curso):
@@ -75,6 +86,12 @@ def obtener_estudiantes(curso):
 # print(obtener_estudiantes(cursos))
 
 """ b """
+"""
+Función: estudiantes_en_comun
+Input: Una diccionario donde se encuentran los estudiantes, a que curso van, su número de identificación y su nota 
+y dos materias
+Output: El estudiante que curse ambas materias
+"""
 
 
 def estudiantes_en_comun(cursos, materia1, materia2):
@@ -97,6 +114,11 @@ profCursos = {"Maestro Roshi": ["Introducción a la Programación", "Matemática
               "Bills": ["Física Cuántica", "Análisis y Diseño de Algoritmos", "Diseño e Implementación de Algoritmos"]}
 """
 """ a """
+"""
+Función: profesores_para_curso
+Input: Un diccionario con los profesores y las materias que dan y una materia
+Output: El profesor que de la materia
+"""
 
 
 def profesores_para_curso(dic_profesor_curso, materia_buscada):
@@ -112,6 +134,11 @@ def profesores_para_curso(dic_profesor_curso, materia_buscada):
 # print(profesores_para_curso(profCursos, "Introducción a la Programación"))
 
 """ b """
+"""
+Función: estudiantes_con_profesor
+Input: El diccionario donde están los estudiantes, el diccionario donde se encuentran los profesores y un profesor
+Output: Los estudiantes que tengan laguna materia con el profesor
+"""
 
 
 def estudiantes_con_profesor(cursos, prof_cursos, profesor):
@@ -128,6 +155,12 @@ def estudiantes_con_profesor(cursos, prof_cursos, profesor):
 
 
 # punto 5
+"""
+Función: grab_input
+Input: Las veces de iterar la función
+Output: imprime los casos, cuantos chocolates tiene cada niño, los chocolates unicos de cada niño en la primera columna 
+y los chocolates que el resto de niños tiene y el no en la segunda columna
+"""
 
 
 def problem_13037(i, b1, b2, b3):
@@ -156,3 +189,5 @@ def grab_input():
                     b3.add(int(chocolate))
             flag += 1
         problem_13037(i, b1, b2, b3)
+
+print(grab_input())
